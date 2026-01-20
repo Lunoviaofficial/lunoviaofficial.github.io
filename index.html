@@ -11,6 +11,63 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
+  <style>
+/* Center the button */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+/* Movie-style button */
+.movie-btn {
+  position: relative;
+  background: black;
+  color: white;
+  padding: 16px 45px;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Hover effect */
+.movie-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* Click press */
+.movie-btn:active {
+  transform: scale(0.95);
+}
+
+/* Ripple flash */
+.movie-btn::after {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  background: rgba(255,255,255,0.25);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+
+.movie-btn:active::after {
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0s;
+}
+</style>
+
+  
+
 <body>
 
   <!-- Hero -->
@@ -52,5 +109,10 @@
     © 2025 LUNOVIA
   </footer>
 
-</body>
+</body><div class="btn-container">
+  <a href="https://rzp.io/i/ABC123" target="_blank">
+    <button class="movie-btn">Buy Now</button>
+  </a>
+</div>
+
 </html>

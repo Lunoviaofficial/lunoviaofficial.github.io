@@ -3,25 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login / Signup - Studio Lunovia</title>
+  <title>Login / Signup</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Firebase -->
   <script type="module" src="firebase.js"></script>
 </head>
 <body>
-
   <h1 style="text-align:center;">Login / Signup</h1>
-
-  <form id="auth-form" style="max-width:400px; margin:20px auto; display:flex; flex-direction:column; gap:10px;">
+  <form id="auth-form" style="max-width:400px;margin:20px auto; display:flex; flex-direction:column; gap:10px;">
     <input type="email" id="email-input" placeholder="Email" required>
     <input type="password" id="password-input" placeholder="Password" required>
     <button type="submit">Login / Signup</button>
   </form>
-
-  <p style="text-align:center;">Already have an account? Just login. First time? It will automatically signup.</p>
-
-  <!-- Auth script -->
   <script type="module" src="auth.js"></script>
-
 </body>
 </html>

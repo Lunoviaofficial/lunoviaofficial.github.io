@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Studio Lunovia Shop</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Firebase -->
-  <script type="module" src="firebase.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Lunovia Shop</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="firebase.js"></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">Studio Lunovia</div>
-    <input type="text" id="search" placeholder="Search products...">
-    <div class="nav-links">
-      <span id="username"></span>
-      <button id="login-btn">Login</button>
-      <button id="logout-btn">Logout</button>
-      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
-      <a href="profile.html">Profile</a>
-      <button id="theme-btn">🌙</button>
-    </div>
-  </nav>
 
-  <!-- Categories -->
-  <div id="categories">
-    <button data-category="all">All</button>
-    <button data-category="clothing">Clothing</button>
-    <button data-category="accessories">Accessories</button>
-    <button data-category="footwear">Footwear</button>
+<nav>
+  <div class="logo">Studio Lunovia</div>
+  <input type="text" id="search" placeholder="Search products...">
+  <div class="nav-links">
+    <span id="username"></span>
+    <button id="login-btn">Login</button>
+    <button id="logout-btn">Logout</button>
+    <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+    <a href="profile.html">Profile</a>
+    <button id="theme-btn">🌙</button>
   </div>
+</nav>
 
-  <!-- Products -->
-  <section id="products"></section>
+<div id="categories">
+  <button data-category="all">All</button>
+  <button data-category="clothing">Clothing</button>
+  <button data-category="accessories">Accessories</button>
+  <button data-category="footwear">Footwear</button>
+</div>
 
-  <script type="module" src="app.js"></script>
+<section id="products"></section>
+
+<script type="module" src="app.js"></script>
 </body>
 </html>

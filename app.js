@@ -2,7 +2,7 @@ import { auth, db } from './firebase.js';
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
 
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
   const usernameEl = document.getElementById("username");
   const loginBtn = document.getElementById("login-btn");
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const productsContainer = document.getElementById("products");
   const themeBtn = document.getElementById("theme-btn");
 
-  themeBtn?.addEventListener("click", ()=>{
+  themeBtn?.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     themeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
   });
@@ -24,52 +24,51 @@ document.addEventListener("DOMContentLoaded", ()=>{
   ];
 
   function displayProducts(list){
-    if(!productsContainer) return;
     productsContainer.innerHTML = "";
-    list.forEach(prod=>{
+    list.forEach(prod => {
       const div = document.createElement("div");
       div.className = "product-card";
       div.innerHTML = `<h3>${prod.name}</h3>
         <p>₹${prod.price}</p>
         <button class="add-to-cart">Add to Cart</button>
         <button class="add-to-wishlist">❤ Wishlist</button>`;
-      div.querySelector(".add-to-cart").addEventListener("click", ()=>addToCart(prod.id));
-      div.querySelector(".add-to-wishlist").addEventListener("click", ()=>addToWishlist(prod.id));
+      div.querySelector(".add-to-cart").addEventListener("click", () => addToCart(prod.id));
+      div.querySelector(".add-to-wishlist").addEventListener("click", () => addToWishlist(prod.id));
       productsContainer.appendChild(div);
     });
   }
 
   displayProducts(products);
 
-  document.getElementById("search")?.addEventListener("input", e=>{
-    const filtered = products.filter(p=>p.name.toLowerCase().includes(e.target.value.toLowerCase()));
+  document.getElementById("search")?.addEventListener("input", e => {
+    const filtered = products.filter(p => p.name.toLowerCase().includes(e.target.value.toLowerCase()));
     displayProducts(filtered);
   });
 
-  document.querySelectorAll("#categories button").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
+  document.querySelectorAll("#categories button").forEach(btn => {
+    btn.addEventListener("click", () => {
       const cat = btn.getAttribute("data-category");
       displayProducts(cat==="all"? products : products.filter(p=>p.category===cat));
     });
   });
 
   let currentUser = null;
-  onAuthStateChanged(auth, async (user)=>{
+  onAuthStateChanged(auth, async (user) => {
     currentUser = user;
     if(user){
       usernameEl.textContent = `Hello, ${user.email}`;
-      loginBtn?.style.display="none";
-      logoutBtn?.style.display="inline-block";
+      loginBtn.style.display="none";
+      logoutBtn.style.display="inline-block";
       updateCartCount();
-    }else{
-      usernameEl.textContent="";
-      loginBtn?.style.display="inline-block";
-      logoutBtn?.style.display="none";
-      if(cartCountEl) cartCountEl.textContent = 0;
+    } else {
+      usernameEl.textContent = "";
+      loginBtn.style.display="inline-block";
+      logoutBtn.style.display="none";
+      cartCountEl.textContent = 0;
     }
   });
 
-  logoutBtn?.addEventListener("click", async ()=>{
+  logoutBtn?.addEventListener("click", async () => {
     await auth.signOut();
     window.location.reload();
   });
@@ -97,9 +96,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     alert("Added to Wishlist!");
   }
 
-  window.addToCart = addToCart;
-  window.addToWishlist = addToWishlist;
-
   async function updateCartCount(){
     if(!currentUser || !cartCountEl) return;
     const cartRef = doc(db,"carts",currentUser.uid);
@@ -108,4 +104,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     cartCountEl.textContent = count;
   }
 
+  window.addToCart = addToCart;
+  window.addToWishlist = addToWishlist;
 });

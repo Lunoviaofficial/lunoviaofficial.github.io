@@ -1,27 +1,42 @@
 // auth.js
 import { auth } from './firebase.js';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } 
+  from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
-const form = document.getElementById("auth-form");
+// Wait for DOM to load
+document.addEventListener("DOMContentLoaded", () => {
 
-form.addEventListener("submit", async (e)=>{
-  e.preventDefault();
-  const email = document.getElementById("email-input").value;
-  const password = document.getElementById("password-input").value;
+  const form = document.getElementById("auth-form");
+  const emailInput = document.getElementById("email-input");
+  const passwordInput = document.getElementById("password-input");
 
-  if(!email || !password){ alert("Fill both fields!"); return; }
+  if (!form || !emailInput || !passwordInput) return;
 
-  try{
-    await createUserWithEmailAndPassword(auth,email,password);
-    alert("Signup successful!");
-    window.location.href="index.html";
-  }catch(signupError){
-    try{
-      await signInWithEmailAndPassword(auth,email,password);
-      alert("Login successful!");
-      window.location.href="index.html";
-    }catch(loginError){
-      alert("Error: "+loginError.message);
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    if (!email || !password) {
+      alert("Please fill both email and password!");
+      return;
     }
-  }
+
+    try {
+      // Try Signup first
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert("Signup successful!");
+      window.location.href = "index.html";
+    } catch (signupError) {
+      try {
+        // If user exists, try login
+        await signInWithEmailAndPassword(auth, email, password);
+        alert("Login successful!");
+        window.location.href = "index.html";
+      } catch (loginError) {
+        alert("Error: " + loginError.message);
+      }
+    }
+  });
+
 });

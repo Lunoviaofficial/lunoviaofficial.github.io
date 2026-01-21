@@ -3,143 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>Studio Lunovia</title>
-
-  <style>
-    body { margin:0; font-family: Arial; }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      background: black;
-      color: white;
-      padding: 15px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-right { display: flex; gap: 10px; }
-
-    input { padding: 7px; }
-    button { padding: 7px 12px; cursor: pointer; }
-
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.6);
-    }
-
-    .modal-content {
-      background: white;
-      width: 280px;
-      margin: 120px auto;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="navbar">
-  <div>Studio Lunovia</div>
-  <div class="nav-right">
-    <input placeholder="Search">
-    <button onclick="openLogin()">Login</button>
+<!-- HEADER -->
+<header class="header">
+  <div class="left">
+    <div class="menu">☰</div>
+    <div class="brand">STUDIO LUNOVIA</div>
+  </div>
+
+  <div class="right">
+    <span class="search">SEARCH</span>
+    <span class="link" onclick="openLogin()">LOG IN</span>
+    <span class="link" onclick="openSignup()">SIGN UP</span>
   </div>
 </header>
 
-<div id="loginModal" class="modal" onclick="closeLogin()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <h3>Login</h3>
-    <input placeholder="Email"><br><br>
-    <input placeholder="Password"><br><br>
-    <button>Login</button>
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeAll()">×</span>
+    <h2>LOG IN</h2>
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Log In</button>
   </div>
 </div>
 
-<script>
-  function openLogin() {
-    document.getElementById("loginModal").style.display = "block";
-  }
-  function closeLogin() {
-    document.getElementById("loginModal").style.display = "none";
-  }
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Studio Lunovia</title>
-
-  <style>
-    body { margin:0; font-family: Arial; }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      background: black;
-      color: white;
-      padding: 15px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-right { display: flex; gap: 10px; }
-
-    input { padding: 7px; }
-    button { padding: 7px 12px; cursor: pointer; }
-
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.6);
-    }
-
-    .modal-content {
-      background: white;
-      width: 280px;
-      margin: 120px auto;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
-</head>
-
-<body>
-
-<header class="navbar">
-  <div>Studio Lunovia</div>
-  <div class="nav-right">
-    <input placeholder="Search">
-    <button onclick="openLogin()">Login</button>
-  </div>
-</header>
-
-<div id="loginModal" class="modal" onclick="closeLogin()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <h3>Login</h3>
-    <input placeholder="Email"><br><br>
-    <input placeholder="Password"><br><br>
-    <button>Login</button>
+<!-- SIGNUP MODAL -->
+<div id="signupModal" class="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeAll()">×</span>
+    <h2>SIGN UP</h2>
+    <input type="text" placeholder="Full Name">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Create Account</button>
   </div>
 </div>
 
-<script>
-  function openLogin() {
-    document.getElementById("loginModal").style.display = "block";
-  }
-  function closeLogin() {
-    document.getElementById("loginModal").style.display = "none";
-  }
-</script>
+<!-- PAGE CONTENT (your old interface goes here) -->
+<main class="content">
+  <h1>The New</h1>
+  <p>Your existing homepage content stays here.</p>
+  <div style="height:2000px"></div>
+</main>
 
+<script src="script.js"></script>
 </body>
 </html>
-

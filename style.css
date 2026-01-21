@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+/* BASE */
 body {
+  font-family: 'Inter', sans-serif;
   background: white;
   color: black;
 }
@@ -34,20 +35,23 @@ body {
 }
 
 .brand {
-  font-size: 42px;
-  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  font-weight: 600;
   letter-spacing: 2px;
 }
 
+/* NAV RIGHT */
 .right {
   display: flex;
   gap: 25px;
-  font-size: 13px;
 }
 
-.link, .search {
-  cursor: pointer;
+.nav-item {
+  font-size: 12px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 /* MODALS */
@@ -67,8 +71,9 @@ body {
 }
 
 .modal-box h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
   margin-bottom: 20px;
-  font-size: 18px;
   letter-spacing: 1px;
 }
 
@@ -91,8 +96,8 @@ body {
 
 .close {
   float: right;
-  cursor: pointer;
   font-size: 20px;
+  cursor: pointer;
 }
 
 /* CONTENT */

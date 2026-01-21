@@ -1,120 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lunovia</title>
-
-  <!-- Classic Fashion Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Libre+Franklin:wght@300;400&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <meta charset="UTF-8">
+  <title>Studio Lunovia</title>
 
   <style>
-/* Center the button */
-.btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-}
+    body { margin:0; font-family: Arial; }
 
-/* Movie-style button */
-.movie-btn {
-  position: relative;
-  background: black;
-  color: white;
-  padding: 16px 45px;
-  font-size: 18px;
-  letter-spacing: 1.2px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  overflow: hidden;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: black;
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-/* Hover effect */
-.movie-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-}
+    .nav-right { display: flex; gap: 10px; }
 
-/* Click press */
-.movie-btn:active {
-  transform: scale(0.95);
-}
+    input { padding: 7px; }
+    button { padding: 7px 12px; cursor: pointer; }
 
-/* Ripple flash */
-.movie-btn::after {
-  content: "";
-  position: absolute;
-  width: 140%;
-  height: 140%;
-  background: rgba(255,255,255,0.25);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  border-radius: 50%;
-  transition: transform 0.4s ease;
-}
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+    }
 
-.movie-btn:active::after {
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 0s;
-}
-</style>
-
-  
+    .modal-content {
+      background: white;
+      width: 280px;
+      margin: 120px auto;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
 
 <body>
 
-  <!-- Hero -->
-  <header class="hero">
-    <h1>LUNOVIA</h1>
-    <p>Contemporary fashion defined by restraint</p>
-  </header>
+<header class="navbar">
+  <div>Studio Lunovia</div>
+  <div class="nav-right">
+    <input placeholder="Search">
+    <button onclick="openLogin()">Login</button>
+  </div>
+</header>
 
-  <!-- Brand Statement -->
-  <section class="section">
-    <p class="statement">
-      Lunovia is a contemporary fashion label focused on refined silhouettes,
-      thoughtful construction, and timeless design. Each collection reflects
-      clarity, purpose, and modern elegance.
-    </p>
-  </section>
-
-  <!-- Collections -->
-  <section class="section">
-    <h2>COLLECTIONS</h2>
-    <div class="grid">
-      <div class="item">ESSENTIALS</div>
-      <div class="item">OUTERWEAR</div>
-      <div class="item">ACCESSORIES</div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section">
-    <h2>CONTACT</h2>
-    <p class="contact">
-      For inquiries and collaborations<br /><br />
-      <a href="mailto:studiolunovia@gmail.com">
-  studiolunovia@gmail.com
-</a>
-
-</a>
-
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    © 2025 LUNOVIA
-  </footer>
-
-</body><div 
+<div id="loginModal" class="modal" onclick="closeLogin()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <h3>Login</h3>
+    <input placeholder="Email"><br><br>
+    <input placeholder="Password"><br><br>
+    <button>Login</button>
+  </div>
 </div>
 
+<script>
+  function openLogin() {
+    document.getElementById("loginModal").style.display = "block";
+  }
+  function closeLogin() {
+    document.getElementById("loginModal").style.display = "none";
+  }
+</script>
+
+</body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Studio Lunovia</title>
+
+  <style>
+    body { margin:0; font-family: Arial; }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: black;
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-right { display: flex; gap: 10px; }
+
+    input { padding: 7px; }
+    button { padding: 7px 12px; cursor: pointer; }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+    }
+
+    .modal-content {
+      background: white;
+      width: 280px;
+      margin: 120px auto;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div>Studio Lunovia</div>
+  <div class="nav-right">
+    <input placeholder="Search">
+    <button onclick="openLogin()">Login</button>
+  </div>
+</header>
+
+<div id="loginModal" class="modal" onclick="closeLogin()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <h3>Login</h3>
+    <input placeholder="Email"><br><br>
+    <input placeholder="Password"><br><br>
+    <button>Login</button>
+  </div>
+</div>
+
+<script>
+  function openLogin() {
+    document.getElementById("loginModal").style.display = "block";
+  }
+  function closeLogin() {
+    document.getElementById("loginModal").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
+

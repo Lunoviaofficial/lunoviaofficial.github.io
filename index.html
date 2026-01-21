@@ -5,16 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Studio Lunovia Shop</title>
 <link rel="stylesheet" href="style.css">
+<!-- Firebase -->
 <script type="module" src="firebase.js"></script>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav>
   <div class="logo">Studio Lunovia</div>
   <input type="text" id="search" placeholder="Search products...">
   <div class="nav-links">
     <span id="username"></span>
-    <button id="login-btn">Login</button>
+    <button id="login-btn" onclick="window.location.href='login.html'">Login</button>
     <button id="logout-btn">Logout</button>
     <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
     <a href="profile.html">Profile</a>
@@ -22,6 +24,7 @@
   </div>
 </nav>
 
+<!-- Categories -->
 <div id="categories">
   <button data-category="all">All</button>
   <button data-category="clothing">Clothing</button>
@@ -29,8 +32,11 @@
   <button data-category="footwear">Footwear</button>
 </div>
 
+<!-- Products -->
 <section id="products"></section>
 
+<!-- Main App Script -->
 <script type="module" src="app.js"></script>
+
 </body>
 </html>

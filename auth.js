@@ -1,42 +1,33 @@
-// auth.js
 import { auth } from './firebase.js';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } 
-  from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
-// Wait for DOM to load
-document.addEventListener("DOMContentLoaded", () => {
-
+document.addEventListener("DOMContentLoaded", ()=>{
   const form = document.getElementById("auth-form");
   const emailInput = document.getElementById("email-input");
   const passwordInput = document.getElementById("password-input");
 
-  if (!form || !emailInput || !passwordInput) return;
+  if(!form || !emailInput || !passwordInput) return;
 
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener("submit", async e=>{
     e.preventDefault();
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
 
-    if (!email || !password) {
-      alert("Please fill both email and password!");
-      return;
-    }
+    if(!email || !password){ alert("Fill both fields!"); return; }
 
-    try {
-      // Try Signup first
-      await createUserWithEmailAndPassword(auth, email, password);
+    try{
+      await createUserWithEmailAndPassword(auth,email,password);
       alert("Signup successful!");
-      window.location.href = "index.html";
-    } catch (signupError) {
-      try {
-        // If user exists, try login
-        await signInWithEmailAndPassword(auth, email, password);
+      window.location.href="index.html";
+    }catch(signupError){
+      try{
+        await signInWithEmailAndPassword(auth,email,password);
         alert("Login successful!");
-        window.location.href = "index.html";
-      } catch (loginError) {
-        alert("Error: " + loginError.message);
+        window.location.href="index.html";
+      }catch(loginError){
+        alert("Error: "+loginError.message);
       }
     }
   });
-
 });

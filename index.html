@@ -2,62 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Studio Lunovia</title>
-
-  <!-- GOOGLE FONTS -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- STYLES -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Lunovia Shop</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Firebase -->
+  <script type="module" src="firebase.js"></script>
 </head>
-
 <body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Studio Lunovia</div>
+    <input type="text" id="search" placeholder="Search products...">
+    <div class="nav-links">
+      <span id="username"></span>
+      <button id="login-btn">Login</button>
+      <button id="logout-btn">Logout</button>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      <a href="profile.html">Profile</a>
+      <button id="theme-btn">🌙</button>
+    </div>
+  </nav>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="left">
-    <div class="menu">☰</div>
-    <div class="brand">STUDIO LUNOVIA</div>
+  <!-- Categories -->
+  <div id="categories">
+    <button data-category="all">All</button>
+    <button data-category="clothing">Clothing</button>
+    <button data-category="accessories">Accessories</button>
+    <button data-category="footwear">Footwear</button>
   </div>
 
-  <div class="right">
-    <span class="nav-item">SEARCH</span>
-    <span class="nav-item" onclick="openLogin()">LOG IN</span>
-    <span class="nav-item" onclick="openSignup()">SIGN UP</span>
-  </div>
-</header>
+  <!-- Products -->
+  <section id="products"></section>
 
-<!-- LOGIN MODAL -->
-<div id="loginModal" class="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closeAll()">×</span>
-    <h2>LOG IN</h2>
-    <input id="loginEmail" type="email" placeholder="Email">
-    <input id="loginPassword" type="password" placeholder="Password">
-    <button onclick="login()">Log In</button>
-  </div>
-</div>
-
-<!-- SIGNUP MODAL -->
-<div id="signupModal" class="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closeAll()">×</span>
-    <h2>SIGN UP</h2>
-    <input id="signupEmail" type="email" placeholder="Email">
-    <input id="signupPassword" type="password" placeholder="Password">
-    <button onclick="signup()">Create Account</button>
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<main class="content">
-  <h1>The New</h1>
-  <p>Your existing site content stays here.</p>
-  <div style="height:2000px;"></div>
-</main>
-
-<!-- MAIN SCRIPT (MODULE) -->
-<script type="module" src="script.js"></script>
-
+  <script type="module" src="app.js"></script>
 </body>
 </html>

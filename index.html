@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Studio Lunovia</title>
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- STYLES -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- HEADER -->
@@ -15,9 +21,9 @@
   </div>
 
   <div class="right">
-    <span class="search">SEARCH</span>
-    <span class="link" onclick="openLogin()">LOG IN</span>
-    <span class="link" onclick="openSignup()">SIGN UP</span>
+    <span class="nav-item">SEARCH</span>
+    <span class="nav-item" onclick="openLogin()">LOG IN</span>
+    <span class="nav-item" onclick="openSignup()">SIGN UP</span>
   </div>
 </header>
 
@@ -26,9 +32,9 @@
   <div class="modal-box">
     <span class="close" onclick="closeAll()">×</span>
     <h2>LOG IN</h2>
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button>Log In</button>
+    <input id="loginEmail" type="email" placeholder="Email">
+    <input id="loginPassword" type="password" placeholder="Password">
+    <button onclick="login()">Log In</button>
   </div>
 </div>
 
@@ -37,20 +43,21 @@
   <div class="modal-box">
     <span class="close" onclick="closeAll()">×</span>
     <h2>SIGN UP</h2>
-    <input type="text" placeholder="Full Name">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button>Create Account</button>
+    <input id="signupEmail" type="email" placeholder="Email">
+    <input id="signupPassword" type="password" placeholder="Password">
+    <button onclick="signup()">Create Account</button>
   </div>
 </div>
 
-<!-- PAGE CONTENT (your old interface goes here) -->
+<!-- MAIN CONTENT -->
 <main class="content">
   <h1>The New</h1>
-  <p>Your existing homepage content stays here.</p>
-  <div style="height:2000px"></div>
+  <p>Your existing site content stays here.</p>
+  <div style="height:2000px;"></div>
 </main>
 
-<script src="script.js"></script>
+<!-- MAIN SCRIPT (MODULE) -->
+<script type="module" src="script.js"></script>
+
 </body>
 </html>

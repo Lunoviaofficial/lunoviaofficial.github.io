@@ -2,61 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LUNOVIA</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-
-  <!-- GRAIN OVERLAY -->
-  <div class="grain"></div>
+<body class="dark">
 
   <!-- HEADER -->
-  <header class="header">
-    <div class="menu" onclick="toggleMenu()">☰</div>
-    <div class="header-right">
-      <span>SEARCH</span>
-      <span>LOG IN</span>
-      <span>BAG (0)</span>
+  <header class="navbar">
+    <div class="nav-left">
+      <input type="text" placeholder="Search..." id="searchInput" />
+    </div>
+
+    <div class="nav-right">
+      <button id="themeToggle">☾</button>
     </div>
   </header>
 
-  <!-- FULLSCREEN MENU -->
-  <div class="fullscreen-menu" id="menu">
-    <span onclick="toggleMenu()">✕</span>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Collection</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </div>
-
   <!-- HERO BRAND -->
-  <section class="hero">
+  <main class="hero">
     <h1>LUNOVIA</h1>
-    <p>The New</p>
+    <p>Timeless Apparel</p>
+  </main>
+
+  <!-- PLACEHOLDER FOR FUTURE PRODUCTS -->
+  <section class="content">
+    <!-- You will add sections here later -->
   </section>
 
-  <!-- EDITORIAL IMAGES -->
-  <section class="editorial">
-    <div class="image left"></div>
-    <div class="image right"></div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <span>VIEW</span>
-    <span>01</span>
-    <span>02</span>
-    <span>03</span>
-  </footer>
-
-<script>
-function toggleMenu() {
-  document.getElementById("menu").classList.toggle("open");
-}
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,15 +1,6 @@
-const toggleBtn = document.getElementById("themeToggle");
-const body = document.body;
+const btn = document.getElementById("themeToggle");
 
-toggleBtn.addEventListener("click", () => {
-  if (body.classList.contains("dark")) {
-    body.classList.remove("dark");
-    body.classList.add("light");
-    toggleBtn.textContent = "☀";
-  } else {
-    body.classList.remove("light");
-    body.classList.add("dark");
-    toggleBtn.textContent = "☾";
-  }
+btn.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+  document.body.classList.toggle("dark");
 });
-

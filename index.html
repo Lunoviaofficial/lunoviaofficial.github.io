@@ -8,22 +8,34 @@
 </head>
 <body>
 
+  <!-- GRAIN OVERLAY -->
+  <div class="grain"></div>
+
   <!-- HEADER -->
   <header class="header">
-    <div class="menu">☰</div>
-
-    <div class="brand">LUNOVIA</div>
-
+    <div class="menu" onclick="toggleMenu()">☰</div>
     <div class="header-right">
       <span>SEARCH</span>
       <span>LOG IN</span>
-      <span>SHOPPING BAG (0)</span>
+      <span>BAG (0)</span>
     </div>
   </header>
 
-  <!-- HERO TITLE -->
-  <section class="hero-text">
-    <h1>The New</h1>
+  <!-- FULLSCREEN MENU -->
+  <div class="fullscreen-menu" id="menu">
+    <span onclick="toggleMenu()">✕</span>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Collection</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+
+  <!-- HERO BRAND -->
+  <section class="hero">
+    <h1>LUNOVIA</h1>
+    <p>The New</p>
   </section>
 
   <!-- EDITORIAL IMAGES -->
@@ -32,13 +44,19 @@
     <div class="image right"></div>
   </section>
 
-  <!-- FOOT NOTE -->
+  <!-- FOOTER -->
   <footer class="footer">
     <span>VIEW</span>
     <span>01</span>
     <span>02</span>
     <span>03</span>
   </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("open");
+}
+</script>
 
 </body>
 </html>

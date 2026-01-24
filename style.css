@@ -1,88 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
 
-/* ---------- VARIABLES ---------- */
-:root {
-  --bg-dark: #0e0e0e;
-  --text-dark: #f4f4f4;
-
-  --bg-light: #f6f3ee;
-  --text-light: #111;
-
-  --accent: #888;
-}
-
-/* ---------- RESET ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---------- THEMES ---------- */
 body.dark {
-  background: var(--bg-dark);
-  color: var(--text-dark);
+  background: #0e0e0e;
+  color: #f4f4f4;
 }
 
 body.light {
-  background: var(--bg-light);
-  color: var(--text-light);
+  background: #f6f3ee;
+  color: #111;
 }
 
-/* ---------- NAVBAR ---------- */
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 24px 40px;
+  padding: 20px 40px;
 }
 
-.nav-left input {
+input {
   background: transparent;
   border: none;
   border-bottom: 1px solid currentColor;
-  padding: 6px;
   color: inherit;
-  font-size: 14px;
   outline: none;
-  width: 180px;
 }
 
-/* ---------- THEME BUTTON ---------- */
-#themeToggle {
+button {
   background: none;
   border: 1px solid currentColor;
   color: inherit;
-  padding: 6px 10px;
   cursor: pointer;
-  font-size: 14px;
+  padding: 6px 10px;
 }
 
-/* ---------- HERO ---------- */
 .hero {
   height: 80vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 140px;
   letter-spacing: 12px;
-}
-
-.hero p {
-  margin-top: 20px;
-  font-size: 16px;
-  letter-spacing: 3px;
-  opacity: 0.7;
-}
-
-/* ---------- CONTENT ---------- */
-.content {
-  min-height: 40vh;
-  padding: 60px;
 }

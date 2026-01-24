@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studio Lunovia Shop</title>
-<link rel="stylesheet" href="style.css">
-<script type="module" src="firebase.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUNOVIA</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <div class="logo">Studio Lunovia</div>
-  <input type="text" id="search" placeholder="Search products...">
-  <div class="nav-links">
-    <span id="username"></span>
-    <button id="login-btn" onclick="window.location.href='login.html'">Login</button>
-    <button id="logout-btn">Logout</button>
-    <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
-    <a href="profile.html">Profile</a>
-    <button id="theme-btn">🌙</button>
-  </div>
-</nav>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="menu">☰</div>
 
-<div id="categories">
-  <button data-category="all">All</button>
-  <button data-category="clothing">Clothing</button>
-  <button data-category="accessories">Accessories</button>
-  <button data-category="footwear">Footwear</button>
-</div>
+    <div class="brand">LUNOVIA</div>
 
-<section id="products"></section>
+    <div class="header-right">
+      <span>SEARCH</span>
+      <span>LOG IN</span>
+      <span>SHOPPING BAG (0)</span>
+    </div>
+  </header>
 
-<script type="module" src="app.js"></script>
+  <!-- HERO TITLE -->
+  <section class="hero-text">
+    <h1>The New</h1>
+  </section>
+
+  <!-- EDITORIAL IMAGES -->
+  <section class="editorial">
+    <div class="image left"></div>
+    <div class="image right"></div>
+  </section>
+
+  <!-- FOOT NOTE -->
+  <footer class="footer">
+    <span>VIEW</span>
+    <span>01</span>
+    <span>02</span>
+    <span>03</span>
+  </footer>
 
 </body>
 </html>
